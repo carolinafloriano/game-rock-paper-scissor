@@ -45,7 +45,7 @@
           <button class="btn-restart" @click="restart()">RECOMEÇAR</button>
         </div>
       </div>
-      <div class="footer" disabled="true">
+      <div class="footer" :class="{ '-disabled': game_start == true }">
         <a class="game-play" @click="startGame('Tesoura')">
           <i class="fa-regular fa-hand-scissors"></i>
         </a>
@@ -77,9 +77,11 @@ export default {
 
   methods: {
     startGame(move_choice) {
-      this.game_start = true;
-      this.move_player = move_choice;
-      this.computerMove();
+      if (this.game_start == false) {
+        this.game_start = true;
+        this.move_player = move_choice;
+        this.computerMove();
+      }
     },
 
     computerMove() {
@@ -210,6 +212,18 @@ $gradient: linear-gradient(84.45deg, #961ef4 0%, #e35858 100%);
   background-color: #3a2a45;
   color: #ffffff;
   font-size: 3em;
+
+  &.-disabled {
+    opacity: 0.5;
+
+    .game-play {
+      cursor: default;
+    }
+  }
+
+  .game-play {
+    cursor: pointer;
+  }
 }
 
 .divider {
@@ -218,9 +232,6 @@ $gradient: linear-gradient(84.45deg, #961ef4 0%, #e35858 100%);
   background-color: #ffffff;
 }
 
-.game-play {
-  cursor: pointer;
-}
 .game-area {
   font-size: 6em;
   background: $gradient;
