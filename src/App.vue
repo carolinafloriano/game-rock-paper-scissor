@@ -140,16 +140,16 @@ $gradient: linear-gradient(84.45deg, #961ef4 0%, #e35858 100%);
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .card {
-  width: 500px;
-  height: 467px;
+  width: 90%;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,8 +174,8 @@ $gradient: linear-gradient(84.45deg, #961ef4 0%, #e35858 100%);
 }
 
 .header {
-  width: 512px;
-  height: 100px;
+  width: 105%;
+  height: 90px;
   position: relative;
   top: -5px;
   background: $gradient;
@@ -191,7 +191,7 @@ $gradient: linear-gradient(84.45deg, #961ef4 0%, #e35858 100%);
   font-style: normal;
   font-weight: 900;
   color: #ffffff;
-  font-size: 2.2em;
+  font-size: 1.8em;
 }
 
 .content {
@@ -202,8 +202,8 @@ $gradient: linear-gradient(84.45deg, #961ef4 0%, #e35858 100%);
 }
 
 .footer {
-  width: 380px;
-  height: 92px;
+  width: 85%;
+  height: 85px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -233,7 +233,7 @@ $gradient: linear-gradient(84.45deg, #961ef4 0%, #e35858 100%);
 }
 
 .game-area {
-  font-size: 6em;
+  font-size: 5em;
   background: $gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -264,5 +264,30 @@ $gradient: linear-gradient(84.45deg, #961ef4 0%, #e35858 100%);
   padding: 10px 20px;
   margin-top: 30px;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 500px;
+    height: 467px;
+  }
+
+  .header {
+    width: 512px;
+    height: 100px;
+  }
+
+  .footer {
+    width: 380px;
+    height: 92px;
+  }
+
+  .header-title {
+    font-size: 2.2em;
+  }
+
+  .game-area {
+    font-size: 7em;
+  }
 }
 </style>
